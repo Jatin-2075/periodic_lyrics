@@ -17,6 +17,7 @@ const Synced_lyrics = () => {
     }
 
     const start = () => {
+        console.log(lyrics);
         alert("please upload file which lyrics \nin song conversation can ruin experience\nnow you can continue")
         if(audioref.current){
             audioref.current.play();
