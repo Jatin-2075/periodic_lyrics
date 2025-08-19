@@ -3,9 +3,9 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Landing from './assets/Landing_page'
-import About from './assets/components/About_project'
-import Search from './assets/components/Search_Bar'
-import Synced_lyrics from './assets/components/synced_lyrics'
+import About from './assets/components/function/About_project'
+import Search from './assets/components/function/Search_Bar'
+import Synced_lyrics from './assets/components/function/synced_lyrics'
 
 function App() {
     const router = createBrowserRouter([

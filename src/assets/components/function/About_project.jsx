@@ -1,5 +1,5 @@
 import Bottom from './Copy_right_bottom';
-import '../css/basic.css'
+import '../css/basic.css' 
 
 const About = () => {
     return(

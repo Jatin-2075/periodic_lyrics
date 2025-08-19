@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import Bottom from "./Copy_right_bottom";
 import "../css/basic.css";
 import { useNavigate } from "react-router-dom";
+import Synced_lyrics from "./synced_lyrics";
+import Unfiltered from "./unfiltered_lyrics";
 
 const Search = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [lyrics, setlyrics] = useState("");
+  const [lyrics, setlyrics] = useState('');
   const navigate = useNavigate();
 
 
@@ -36,7 +38,7 @@ const Search = () => {
       setlyrics(lyr.syncedLyrics || "lyrics not found");
       console.log(lyr);
       setLoading(false);
-      navigate("/synced_lyrics", { state: { lyrics: synced } });
+      navigate( '/search_bar' ,{ state: { lyrics: synced } });
     })
   };
 
@@ -51,7 +53,6 @@ const Search = () => {
             placeholder="Enter Song Name"
           />
           <button type="button" onClick={handleSearch}><img src="https://cdn4.iconfinder.com/data/icons/music-276/24/search_music_1_music_color_f-64.png" /></button>
-          {/* <input type="file" accept="audio/mp3"/> */}
         </div>
 
         <div>
@@ -63,13 +64,12 @@ const Search = () => {
             </div>
           ))}
         </div>
-
-          {/* for now it is good like this */}
-        {/* {lyrics && (
-          <div>
-            <p>{lyrics}</p>
-          </div>
-        )} */}
+      </div>
+      <div>
+        <Synced_lyrics lyrics={lyrics} />
+      </div>
+      <div>
+        <Unfiltered lyrics={lyrics} />
       </div>
       <Bottom />
     </div>
