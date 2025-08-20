@@ -1,6 +1,5 @@
 import Search from "./components/function/Search_Bar";
 import About from "./components/function/About_project";
-import Bottom from "./components/function/Copy_right_bottom";
 import Synced_lyrics from "./components/function/synced_lyrics";
 
 import './components/function/css/basic.css'
