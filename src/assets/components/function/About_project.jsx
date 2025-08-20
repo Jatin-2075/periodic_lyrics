@@ -5,8 +5,8 @@ const About = () => {
     return(
         <div className="div_app">
             <p>About</p>
-            <p>This project gives a fun twist to the traditional periodic table by making each element interactive. When a user clicks on an element, a unique sound or music snippet plays, creating an engaging way to remember it. Built with HTML, CSS, and JavaScript (or React), it’s fully responsive and smooth across devices.</p>
-            <p> Features include a search bar for quick element lookup, hover effects showing atomic details, and grouping by element categories. The goal is to blend science with creativity, turning chemistry into a more enjoyable and memorable learning experience. It also demonstrates skills in API usage, event handling, and building interactive web applications.</p>
+            <p>Periodic Lyrics is a creative twist on the periodic table where song lyrics transform into chemical elements. Each character in a lyric maps to its corresponding element — showing details like symbol, atomic number, weight, and category. Instead of reading plain text, you experience music through science, making chemistry feel more interactive and fun.</p>
+            <p>The project is built using React + Vite, styled with responsive CSS, and powered by a custom JSON dataset of elements. Deployed on Vercel, it works smoothly across devices. What started as a challenge to display elements instead of plain characters turned into an engaging way to blend music + chemistry + code into one unique experience.</p>
             <div>
                 <div>
                     <Bottom/>
