@@ -3,7 +3,7 @@ import About from "./components/function/About_project";
 import Bottom from "./components/function/Copy_right_bottom";
 import Synced_lyrics from "./components/function/synced_lyrics";
 
-import './components/css/basic.css'
+import './components/function/css/basic.css'
 
 import { Link } from "react-router-dom";
 

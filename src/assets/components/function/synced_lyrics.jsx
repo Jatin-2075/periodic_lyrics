@@ -1,6 +1,6 @@
-import '../css/basic.css'
+import './css/basic.css'
 import { useRef, useState } from "react";
-import periodicjson from './Periodic_table/periodic_table.json'
+import periodicjson from '../Periodic_table/periodic_table.json'
 
 const Synced_lyrics = ({ lyrics }) => {
   const [audiourl, setaudiourl] = useState(null);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Bottom from "./Copy_right_bottom";
-import "../css/basic.css";
+import "./css/basic.css";
 import { useNavigate } from "react-router-dom";
 import Synced_lyrics from "./synced_lyrics";
 import Unfiltered from "./unfiltered_lyrics";

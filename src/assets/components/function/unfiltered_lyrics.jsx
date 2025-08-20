@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import './css/basic.css'
 
 const Unfiltered = ({lyrics}) => {
     const [filetered_lyrics, setfiletered_lyrics] = useState('');

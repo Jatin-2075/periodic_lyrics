@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../css/basic.css';
+import './css/basic.css';
 
 
 const Bottom = () => {
