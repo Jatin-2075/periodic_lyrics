@@ -73,12 +73,12 @@ const Synced_lyrics = ({ lyrics }) => {
         <audio ref={audioref} src={audiourl} controls />
       </div>
 
-      <div className="lyrics">
+      <div  className="word-line">
         {visibleWords.map((el, i) => (
           <span key={i} className="element-box">
-            <div>{el.name || ""}</div>
-            <div>{el.atomicWeight || ""}</div>
             <div>{el.symbol}</div>
+            <div>{el.atomicWeight || ""}</div>
+            <div>{el.name || ""}</div>
             <div>{el.atomicNumber || ""}</div>
             <div>{el.category || ""}</div>
           </span>

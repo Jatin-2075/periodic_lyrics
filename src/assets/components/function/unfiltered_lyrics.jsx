@@ -13,7 +13,7 @@ const Unfiltered = ({lyrics}) => {
 
 
     return (
-        <div>
+        <div className="unfiltered">
             <p>lyrics</p>
             {filetered_lyrics.split("[").map((line, i) => line.trim() ? 
                 <p key={i}>{"[" + line }</p> : null)}
