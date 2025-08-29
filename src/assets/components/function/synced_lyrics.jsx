@@ -1,6 +1,7 @@
-import './css/basic.css'
+import "./css/basic.css";
 import { useRef, useState } from "react";
-import periodicjson from '../Periodic_table/periodic_table.json'
+import periodicjson from "../Periodic_table/periodic_table.json";
+import { Play } from "lucide-react";
 
 const Synced_lyrics = ({ lyrics }) => {
   const [audiourl, setaudiourl] = useState(null);
@@ -26,36 +27,39 @@ const Synced_lyrics = ({ lyrics }) => {
       return { skip, char: { symbol: el } };
     };
 
-    // split lyrics to words → chars → objects
     let skip = false;
-    const words = lyrics.toLowerCase().split(" ").map(word =>
-      word.split("").map(el => {
-        const result = skipChar(el, skip);
-        skip = result.skip;
-        return result.char;
-      }).filter(Boolean)
-    );
+    const words = lyrics
+      .toLowerCase()
+      .split(" ")
+      .map((word) =>
+        word
+          .split("")
+          .map((el) => {
+            const result = skipChar(el, skip);
+            skip = result.skip;
+            return result.char;
+          })
+          .filter(Boolean)
+      );
 
-    let i = 0; // word index
+    let i = 0;
     const showNextChunk = () => {
-      const chunk = words.slice(i, i + 3); // max 3 words
-      setVisibleWords([]); // clear previous
+      const chunk = words.slice(i, i + 3);
+      setVisibleWords([]);
 
       let charIndex = 0;
-      chunk.forEach(word => {
-        word.forEach(char => {
+      chunk.forEach((word) => {
+        word.forEach((char) => {
           setTimeout(() => {
-            setVisibleWords(prev => [...prev, char]);
-          }, charIndex * 200); // each char 0.2 sec
+            setVisibleWords((prev) => [...prev, char]);
+          }, charIndex * 200);
           charIndex++;
         });
-        // add small delay between words
         charIndex += 2;
       });
 
       i += 3;
       if (i < words.length) {
-        // schedule next 3-word chunk after current chunk finishes
         setTimeout(showNextChunk, charIndex * 200 + 500);
       }
     };
@@ -64,28 +68,48 @@ const Synced_lyrics = ({ lyrics }) => {
   };
 
   return (
-    <div>
-      <div>
-        <input onChange={handlefile} type="file" accept="audio/mpeg" />
-      </div>
+    <div className="flex flex-col items-center gap-6 p-6 bg-gray-900 min-h-screen text-white">
+      {/* Upload Input */}
+      <label className="w-full max-w-md">
+        <input
+          className="file-input"
+          onChange={handlefile}
+          type="file"
+          accept="audio/mpeg"
+        />
+      </label>
 
-      <div>
-        <audio ref={audioref} src={audiourl} controls />
-      </div>
+      {/* Audio Player */}
+      <audio
+        ref={audioref}
+        src={audiourl}
+        controls
+        className="w-full max-w-md rounded-xl shadow-md"
+      />
 
-      <div  className="word-line">
+      {/* Lyrics Display */}
+      <div className="flex flex-wrap justify-center gap-3 w-full max-w-3xl">
         {visibleWords.map((el, i) => (
-          <span key={i} className="element-box">
-            <div>{el.symbol}</div>
-            <div>{el.atomicWeight || ""}</div>
-            <div>{el.name || ""}</div>
-            <div>{el.atomicNumber || ""}</div>
-            <div>{el.category || ""}</div>
+          <span
+            key={i}
+            className="element-box bg-gray-800 border border-gray-600 rounded-xl p-3 text-center w-28 hover:scale-105 transition"
+          >
+            <div className="text-xl font-bold">{el.symbol}</div>
+            <div className="text-xs text-gray-400">{el.atomicWeight || ""}</div>
+            <div className="text-sm">{el.name || ""}</div>
+            <div className="text-xs">{el.atomicNumber || ""}</div>
+            <div className="text-xs italic">{el.category || ""}</div>
           </span>
         ))}
       </div>
 
-      <button onClick={start}>▶</button>
+      {/* Start Button */}
+      <button
+        onClick={start}
+        className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
+      >
+        <Play size={18} /> Start Sync
+      </button>
     </div>
   );
 };

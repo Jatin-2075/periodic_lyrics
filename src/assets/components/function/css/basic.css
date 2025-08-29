@@ -188,3 +188,53 @@ a.link:hover {
   white-space: pre-wrap;
   line-height: 1.5;
 }
+
+.file-input {
+  font-size: 14px;
+  color: #ddd;
+  background-color: #1a1a1a;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  width: 100%;
+}
+
+/* 🎵 Style the actual button */
+.file-input::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.file-input::file-selector-button:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.file-input::file-selector-button:active {
+  transform: scale(0.95);
+}
+
+audio {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #111;
+}
+
+/* Chrome / Edge */
+audio::-webkit-media-controls-panel {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  border-radius: 12px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-timeline {
+  filter: invert(1) hue-rotate(180deg);
+}
