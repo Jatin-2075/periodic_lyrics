@@ -1,12 +1,42 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Periodic Lyrics
 
-Currently, two official plugins are available:
+> Transform song lyrics into chemical elements. A creative blend of music, chemistry, and web development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** https://periodic-lyrics.vercel.app/
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Periodic Lyrics is an interactive web application that converts any text into a sequence of periodic table elements. Each character maps to a chemical element, displaying its symbol, atomic number, name, and category in beautifully styled blocks.
+
+## ✨ Key Features
+
+- **Text-to-Element Mapping** – Every character converts to its corresponding periodic element in real-time
+- **Dynamic Element Blocks** – Displays symbol, name, atomic number, and category for each element
+- **Responsive Design** – Mobile-first layout that adapts to any screen size
+- **Smooth Animations** – Clean neon-themed UI with seamless transitions
+- **Instant Updates** – No page reloads; output updates as you type
+
+## 🛠 Tech Stack
+
+- **React** – Component-driven architecture
+- **CSS** – Custom modular styling with responsive grid
+- **JavaScript** – Text mapping and data processing
+- **Vercel** – Production deployment with auto-updates
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+npm start
+```
+
+## 📋 Future Enhancements
+
+- Interactive periodic table with element highlighting
+- Category-based color coding
+- File upload (.txt, .srt)
+- Dark/light mode toggle
+- Export functionality
