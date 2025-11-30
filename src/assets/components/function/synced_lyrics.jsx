@@ -39,7 +39,7 @@ const Synced_lyrics = ({ lyrics }) => {
             skip = result.skip;
             return result.char;
           })
-          .filter(Boolean)
+          .filter((char) => char !== null)
       );
 
     let i = 0;
